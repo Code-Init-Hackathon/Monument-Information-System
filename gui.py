@@ -176,8 +176,6 @@ class Map(tk.Frame):
 		tk.Frame.__init__(self, parent)
 		label = ttk.Label(self, text ="Page 2", font = LARGEFONT)
 		label.grid(row = 0, column = 4, padx = 10, pady = 10)
-          
-        os.system("python google_maps.py")
 
 		# button to show frame 2 with text
 		# layout2
