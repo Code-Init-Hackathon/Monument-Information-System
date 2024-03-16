@@ -146,7 +146,7 @@ class Database(tk.Frame):
                 if name.lower() == selected_name.lower():
                     self.listbox.insert(tk.END, data['name'][index])
              
-        elif selected_location:
+        if selected_location:
             self.listbox.delete(0, tk.END)
             for index, location in enumerate(data['location']):
                 if location.lower() == selected_location.lower():
