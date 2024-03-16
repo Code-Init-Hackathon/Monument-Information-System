@@ -17,7 +17,7 @@ def get_data():
     latitude = soup.find('span',class_='latitude').text
     longitude = soup.find('span',class_='longitude').text
     with open(f'{name}/{name}.txt','w') as f:
-        f.write(f'{latitude}\\n')
+        f.write(f'{latitude}\n')
         f.write(f'{longitude}')
         print('location')
 
