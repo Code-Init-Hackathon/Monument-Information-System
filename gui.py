@@ -2,6 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox  # Importing messagebox module
 from tkinter import StringVar
+from tkhtmlview import HTMLLabel
+import webbrowser
+
+from tkinterweb import HtmlFrame
+from tkinter import *
+
+
 data = {
     'name': ['Eiffel Tower', 'Colosseum', 'Taj Mahal'],
     'location': ['Paris', 'Rome', 'Agra'],
@@ -146,7 +153,7 @@ class Database(tk.Frame):
                 if name.lower() == selected_name.lower():
                     self.listbox.insert(tk.END, data['name'][index])
              
-        if selected_location:
+        elif selected_location:
             self.listbox.delete(0, tk.END)
             for index, location in enumerate(data['location']):
                 if location.lower() == selected_location.lower():
@@ -171,29 +178,20 @@ class Database(tk.Frame):
 
 
 
-class Map(tk.Frame): 
-	def __init__(self, parent, controller):
-		tk.Frame.__init__(self, parent)
-		label = ttk.Label(self, text ="Page 2", font = LARGEFONT)
-		label.grid(row = 0, column = 4, padx = 10, pady = 10)
+class Map(ttk.Frame):
+    def __init__(self, parent, controller):
+        ttk.Frame.__init__(self, parent)
 
-		# button to show frame 2 with text
-		# layout2
-		button1 = ttk.Button(self, text ="Database",
-							command = lambda : controller.show_frame(Database))
-	
-		# putting the button in its place by 
-		# using grid
-		button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
-		# button to show frame 3 with text
-		# layout3
-		button2 = ttk.Button(self, text ="Home page",
-							command = lambda : controller.show_frame(StartPage))
-	
-		# putting the button in its place by
-		# using grid
-		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
+        html = f"""
+        <h1>Interactive Maps</h1>
+
+        <p>Click <a href="test.html">on the map</a> to visit view these monuments.</p>
+        """
+       
+        
+        html_label = HTMLLabel(self, html=html)
+        html_label.pack(fill=tk.BOTH, expand=True)
 
 class Add_Monument(tk.Frame):
     def __init__(self, parent, controller):
