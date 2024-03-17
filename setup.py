@@ -1,4 +1,4 @@
-import os
+import os,shutil
 import subprocess
 import firebase_admin
 from firebase_admin import credentials
@@ -8,10 +8,13 @@ from firebase_admin import storage
 SCRAPED_DATA_DIRECTORY = "scraped_content"
 PHOTO_STORAGE_FIREBASE_DIRECTORY = "photos"
 LOGS_DIRECTORY = "logs"
+LOCAL_DATABASE_FOLDER = "local_database"
 UPPER_LIMIT = 30
 
 if LOGS_DIRECTORY not in os.listdir():
     os.mkdir(LOGS_DIRECTORY)
+if LOCAL_DATABASE_FOLDER not in os.listdir():
+    os.mkdir(LOCAL_DATABASE_FOLDER)
 
 cred = credentials.Certificate("firebase_credentials.json")
 
@@ -38,9 +41,10 @@ def preprocess_data_to_firebase():
         for file in [f"{folder}.jpg","description.txt","coordinates.txt"]:
             if file not in files:
                 all_files_present = False
+                print(file,all_files_present)
                 with open(os.path.join(LOGS_DIRECTORY,"scraped_content_log.txt"),"at") as f:
-                    f.write(f"{file} could not be found in {SCRAPED_DATA_DIRECTORY} folder.\n")
-
+                    f.write(f"{file} could not be found in {SCRAPED_DATA_DIRECTORY}/{folder} folder.\n")
+        #THERE IS SOME PROBLEM HERE AS THE ABOVE CONDTIONS DONT WORK FOR HANDLING ERRORS
         if(all_files_present == False):
             continue    
         photo_filename = os.path.join(SCRAPED_DATA_DIRECTORY,folder,f"{folder}.jpg")
@@ -66,5 +70,12 @@ def preprocess_data_to_firebase():
         files_completed += 1
     print(f"=> [{files_completed} have been processed and uploaded to firebase]")
 
+def remove_folder():
+    try:
+        shutil.rmtree(SCRAPED_DATA_DIRECTORY)
+    except Exception as e:
+        print(f"Exception Occured: \n{e}")
+
 scrape_data()
 preprocess_data_to_firebase()
+remove_folder()
