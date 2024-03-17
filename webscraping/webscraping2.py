@@ -63,13 +63,13 @@ for list_site in list_sites:
                 #tds = maptable.find_all('td')
                 #coordinate = tds[3].text.strip()
                 #print(name)
-                os.mkdir(f'scraped_content/{name}')
-                with open(f'scraped_content/{name}/location.txt','a+') as k:
+                os.mkdir(os.path.join(DATA_DIRECTORY,name))
+                with open(os.path.join(DATA_DIRECTORY,name,'location.txt'),'a+') as k:
                     k.write(location)
-                with open(f'scraped_content/{name}/coordinate.txt','a+') as j:
+                with open(os.path.join(DATA_DIRECTORY,name,'coordinates.txt'),'a+') as j:
                     j.write(latandlong)
-                urllib.request.urlretrieve(link,f'scraped_content/{name}/{name}.jpg')
-                with open(f'scraped_content/{name}/paragraph.txt','a+') as u:
+                urllib.request.urlretrieve(link,os.path.join(DATA_DIRECTORY,name,f'{name}.jpg'))
+                with open(os.path.join(DATA_DIRECTORY,name,'description.txt'),'a+') as u:
                     u.write(paragraph)
                 count = count+1
                 print(count)
@@ -79,6 +79,6 @@ for list_site in list_sites:
             #print(coordinate)
             
     number = number+1
-    if number == 20:
+    if number == 3:
         print('Done!')
         break
