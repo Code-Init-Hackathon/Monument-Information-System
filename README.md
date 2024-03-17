@@ -27,10 +27,10 @@ for visualization and user interface components, respectively.
    ```
 
 2. Run the setup.py file
-   '''bash
+    ```bash
       python3 -m setup.py
-   
-   '''
+   ```
+    
 4. Set up Firebase Firestore:
    - Create a Firebase project and set up Firestore.
    - Generate a service account key and download the JSON file.
