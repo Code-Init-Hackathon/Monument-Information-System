@@ -3,3 +3,5 @@ firebase_admin
 bs4
 lxml
 tkhtmlview
+tkinterweb
+ttkthemes
