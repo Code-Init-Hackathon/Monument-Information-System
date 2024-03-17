@@ -38,9 +38,9 @@ for visualization and user interface components, respectively.
 
 ## Usage
 1. Run the application:
-   '''bash
+   ```bash
       python -m gui.py
-   '''
+   ```
 
 3. Use the application to:
    - Add, edit, or delete information about historical buildings.
