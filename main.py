@@ -5,13 +5,14 @@ from tkinter import StringVar
 from tkhtmlview import HTMLLabel
 from tkinter import filedialog
 import webbrowser
-import os
+import os,shutil
 import subprocess
+import threading
 
 from tkinterweb import HtmlFrame
 from tkinter import *
 
-LOCAL_DATABASE_FOLDER = "local_database"
+LOCAL_DATABASE_FOLDER = ".local_database"
 PUSH_TO_FIREBASE_SCRIPT = "push_to_firebase.py"
      
 
@@ -262,8 +263,9 @@ class Add_Monument(tk.Frame):
         with open(os.path.join(LOCAL_DATABASE_FOLDER,name,"location.txt"),"wt") as f:
              string_val = str(location) + "\n"
              f.write(string_val)
-
         subprocess.run(["python3",PUSH_TO_FIREBASE_SCRIPT,LOCAL_DATABASE_FOLDER,name,file_path])
+        shutil.rmtree(os.path.join(LOCAL_DATABASE_FOLDER,name))
+        
 
 app = tkinterApp()
 app.geometry("1000x800")

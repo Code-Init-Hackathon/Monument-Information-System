@@ -18,9 +18,6 @@ data = {
 }
 
 
-
-
-
 LARGEFONT =("Verdana", 20)
 
 class tkinterApp(tk.Tk):

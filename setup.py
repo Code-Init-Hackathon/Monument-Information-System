@@ -8,7 +8,7 @@ from firebase_admin import storage
 SCRAPED_DATA_DIRECTORY = "scraped_content"
 PHOTO_STORAGE_FIREBASE_DIRECTORY = "photos"
 LOGS_DIRECTORY = "logs"
-LOCAL_DATABASE_FOLDER = "local_database"
+LOCAL_DATABASE_FOLDER = ".local_database"
 UPPER_LIMIT = 30
 
 if LOGS_DIRECTORY not in os.listdir():

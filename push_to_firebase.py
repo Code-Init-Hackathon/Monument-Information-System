@@ -38,4 +38,5 @@ content = {
 doc_ref.set(content)
 
 blob = storage_client.blob(f"{PHOTO_STORAGE_FIREBASE_DIRECTORY}/{NAME}.jpg")
+print(PHOTO_FILE_PATH)
 blob.upload_from_filename(PHOTO_FILE_PATH)
