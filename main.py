@@ -183,7 +183,7 @@ class Map(ttk.Frame):
         html = f"""
         <h1>Interactive Maps</h1>
 
-        <p>Click <a href="test.html">on the map</a> to visit view these monuments.</p>
+        <p>Click <a href="gmao.html">on the map</a> to visit view these monuments.</p>
         """
        
         
