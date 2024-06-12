@@ -49,6 +49,9 @@ const Home = () => {
         fetchMonuments();
 
     }, []);
+    
+    
+ 
 
     return (
         <div>
@@ -65,7 +68,7 @@ const Home = () => {
                     <div className="flex-none">
                         <ul className="flex space-x-5">
                             <li><Link href="/new-monument" className="text-white text-lg">Add Monument</Link></li>
-                            <li><Link href="#" className="text-white text-lg">View in Map</Link></li>
+                            <li><Link href="/map" className="text-white text-lg">View in Map</Link></li>
                         </ul>
                     </div>
                 </div>
