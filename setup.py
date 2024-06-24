@@ -4,8 +4,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import storage
-
-SCRAPED_DATA_DIRECTORY = "scraped_content"
+CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+SCRAPED_DATA_DIRECTORY = os.path.join(CURRENT_DIRECTORY,"scraped_content")
 PHOTO_STORAGE_FIREBASE_DIRECTORY = "photos"
 
 cred = credentials.Certificate("firebase_credentials.json")

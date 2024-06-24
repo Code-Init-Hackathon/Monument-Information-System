@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import urllib.request
 import os 
-
-DATA_DIRECTORY = "scraped_content"
+CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+DATA_DIRECTORY = os.path.join(CURRENT_DIRECTORY,"scraped_content")
 if(DATA_DIRECTORY not in os.listdir()):
     os.mkdir(DATA_DIRECTORY)
 
