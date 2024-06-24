@@ -1,4 +1,0 @@
-requests
-firebase_admin
-bs4
-lxml
