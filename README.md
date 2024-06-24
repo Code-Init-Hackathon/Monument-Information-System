@@ -1,4 +1,4 @@
-# Monument Information System
+# Monument Information System (CodeInit '24 Hackathon)
 
 This project is a Monument Information System built using React and Next.js with Python for web scraping functionalities. It integrates Firebase for storage and Firestore database services, utilizes Tailwind CSS for styling, and incorporates Google Maps API for mapping functionalities. BeautifulSoup is used for scraping data from Wikipedia.
 
