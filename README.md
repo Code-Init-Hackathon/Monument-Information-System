@@ -8,6 +8,13 @@ This project is a Monument Information System built using React and Next.js with
 ![Map](screenshots/map_image.png)
 ![Document_Add](screenshots/add_document_image.png)
 
+# Features
+
+- **Firebase Integration:** Utilizes Firebase for storage and Firestore database services.
+- **Google Maps API:** Integrates Google Maps API to display monument locations and details on a map.
+- **Web Scraping:** Utilizes BeautifulSoup for scraping data from Wikipedia.
+- **Responsive Design:** Designed using Tailwind CSS for a responsive and modern UI.
+
 ## Getting Started
 
 Follow these steps to get the project up and running on your local machine.
@@ -53,13 +60,6 @@ Follow these steps to get the project up and running on your local machine.
       npm run dev
 Open http://localhost:3000 to view the app in your browser.
 
-
-# Features
-
-- **Firebase Integration:** Utilizes Firebase for storage and Firestore database services.
-- **Google Maps API:** Integrates Google Maps API to display monument locations and details on a map.
-- **Web Scraping:** Utilizes BeautifulSoup for scraping data from Wikipedia.
-- **Responsive Design:** Designed using Tailwind CSS for a responsive and modern UI.
 
 # License
 
