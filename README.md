@@ -45,7 +45,6 @@ Follow these steps to get the project up and running on your local machine.
     NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
     NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
     NEXT_PUBLIC_GMAP_API_KEY=your_google_maps_api_key
-    NEXT_PUBLIC_PASSCODE=your_passcode
 7. **Install npm dependencies:**
    ```bash
      npm install
